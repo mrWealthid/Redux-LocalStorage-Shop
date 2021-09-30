@@ -13,7 +13,7 @@ const CartItems = ({ id, title, price, img, quantity }) => {
     <div className="flex justify-between items-center">
       <div>
         <img
-          className="w-20 animate-float h-16"
+          className="w-20 rounded-lg h-20"
           src={`../Assets/product${id}.png`}
           alt="products"
         />

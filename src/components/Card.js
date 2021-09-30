@@ -21,7 +21,7 @@ const Card = ({ title, price, id }) => {
   };
 
   return (
-    <div className="mb-3 lg:w-10/12 hover:scale-100 transition duration-1000 mt-10 transform scale-90 rounded-lg">
+    <div className="mb-3 lg:w-10/12 transition duration-1000 mt-10 transform scale-90 rounded-lg">
       <img src={`../Assets/product${id}.png`} alt="" />
       <div className="flex justify-between my-2 px-4">
         <p>{title}</p>

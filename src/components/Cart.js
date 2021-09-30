@@ -67,8 +67,8 @@ const Cart = () => {
 
   return (
     <div
-      className={`bg-gray-200 min-h-screen w-full ${
-        cart.length < 1 ? "flex justify-center items-center" : ""
+      className={`bg-gray-200  w-full flex justify-center flex-wrap ${
+        cart.length < 1 ? "min-h-screen items-center" : ""
       }`}
     >
       {cart.length > 0 ? (
@@ -80,7 +80,10 @@ const Cart = () => {
           <p className="mt-10">Total Amount To Be Paid {total}</p>
 
           <div className={"flex gap-10 my-10 justify-center"}>
-            <form className="flex gap-10" onSubmit={handleSubmit}>
+            <form
+              className="flex flex-col justify-center md:flex-row flex-wrap gap-10"
+              onSubmit={handleSubmit}
+            >
               <input
                 className={`border-gray-400 ${
                   error ? "ring-red-500 ring-2" : "ring-blue-500"
