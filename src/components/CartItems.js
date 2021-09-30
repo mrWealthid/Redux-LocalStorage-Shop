@@ -1,21 +1,22 @@
 import React from "react";
-// import { useGlobalContext } from "../Context/ShopContext";
-import { useSelector, useDispatch } from "react-redux";
+
+import { useDispatch } from "react-redux";
 import {
-  AddToCart,
   removeFromCart,
   IncreaseQuantity,
   DecreaseQuantity,
 } from "./Actions/index";
 
 const CartItems = ({ id, title, price, img, quantity }) => {
-  // const { handleIncrease, handleDecrease, handleDel } = useGlobalContext();
-
   const dispatch = useDispatch();
   return (
     <div className="flex justify-between items-center">
       <div>
-        <img className="w-20 animate-float h-16" src={"/"} alt="products" />
+        <img
+          className="w-20 animate-float h-16"
+          src={`../Assets/product${id}.png`}
+          alt="products"
+        />
       </div>
 
       <div className="w-4/12 text-center space-y-2 my-2">

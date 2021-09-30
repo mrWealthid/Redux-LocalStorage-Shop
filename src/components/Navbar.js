@@ -6,7 +6,6 @@ import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 const Navbar = () => {
-  // const { cart } = useGlobalContext();
   const [isOpen, setIsOpen] = useState(false);
 
   const cart = useSelector((cart) => cart.ShopReducer);
@@ -21,10 +20,10 @@ const Navbar = () => {
   //   }, [isOpen]);
   return (
     <div
-      className="bg-gray-300 text-gray-700 transition duration-1000 p-4"
+      className="bg-gray-700 text-white transition duration-1000 p-4"
       // ref={linksContainerRef}
     >
-      <header className="flex justify-between ">
+      <header className="flex justify-between items-center">
         <div>Navbar</div>
 
         <div className="md:hidden">
@@ -40,11 +39,11 @@ const Navbar = () => {
           <NavLink to="/about">About</NavLink>
           <NavLink to="/contact">Contact</NavLink>
           <NavLink
-            className="bg-white gap-2 rounded-lg p-2 text-black"
+            className="bg-white gap-2 rounded-lg px-2 py-1 text-black"
             to="/cart"
           >
-            <span className="flex item-center gap-5 ">
-              <FaShoppingBag />
+            <span className="flex items-center text-gray-700 gap-5 ">
+              <FaShoppingBag className="text-gray-700" />
               {cart.length}
             </span>
           </NavLink>
@@ -54,7 +53,7 @@ const Navbar = () => {
       <div
         className={`${
           isOpen ? "block md:hidden" : "hidden"
-        }  flex flex-col  mt-4 transform space-y-4`}
+        }  flex flex-col text-left mt-6 transform space-y-4`}
       >
         <a href="/">Home</a>
         <a href="/">About</a>

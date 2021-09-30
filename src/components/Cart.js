@@ -66,14 +66,18 @@ const Cart = () => {
   };
 
   return (
-    <div>
+    <div
+      className={`bg-gray-200 min-h-screen ${
+        cart.length < 1 ? "flex justify-center items-center" : ""
+      }`}
+    >
       {cart.length > 0 ? (
-        <div>
+        <div className="py-4 px-6">
           {cart.map((item) => (
             <CartItems key={item.id} {...item} />
           ))}
 
-          <p>Total Amount To Be Paid {total}</p>
+          <p className="mt-10">Total Amount To Be Paid {total}</p>
 
           <div className={"flex gap-10 my-10 justify-center"}>
             <form className="flex gap-10" onSubmit={handleSubmit}>
@@ -131,7 +135,7 @@ const Cart = () => {
           </div>
         </div>
       ) : (
-        <div className="flex gap-10 mt-10 justify-center items-center">
+        <div className="flex gap-10 justify-center items-center">
           <p className="text-lg">No Item in Cart</p>
           <NavLink to="/">
             <button className="p-3 bg-gray-600 rounded-lg text-white">

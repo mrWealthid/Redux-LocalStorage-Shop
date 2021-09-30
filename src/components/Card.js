@@ -20,39 +20,29 @@ const Card = ({ title, price, id }) => {
     return cart.some((item) => item.id === myid);
   };
 
-  //   useEffect(() => {
-  //     ConfirmCart();
-  //   }, []);
-
-  // const AddToCart = (id) => {
-  //   setCart([...cart, products.find((product) => product.id === id)]);
-  // };
-
-  // const RemoveFromCart = (id) => {
-  //   setCart(cart.filter((product) => product.id !== id));
-  // };
-
   return (
-    <div className="w-1/4 mb-3">
+    <div className="mb-3 lg:w-10/12 hover:scale-100 transition duration-1000 mt-10 transform scale-90 rounded-lg">
       <img src={`../Assets/product${id}.png`} alt="" />
-      <div className="flex justify-between my-2">
+      <div className="flex justify-between my-2 px-4">
         <p>{title}</p>
         <p>${price}</p>
       </div>
 
       {ConfirmCartItem(id) ? (
         <button
-          className={"bg-gray-400 text-white p-2 w-full"}
+          className="bg-red-400 focus:ring shadow-lg focus:ring-red-200 focus:ring-offset-2 text-white rounded-lg p-2 w-full"
           onClick={() => dispatch(removeFromCart(id))}
         >
-          {"Remove From Cart"}
+          {"Remove Item"}
         </button>
       ) : (
         <button
-          className={"bg-gray-700 text-white p-2 w-full"}
+          className={
+            "bg-gray-700 text-white rounded-lg shadow-lg p-2 w-full  focus:outline-none focus:ring-4 focus:ring-gray-500 focus:ring-opacity-50"
+          }
           onClick={() => dispatch(AddToCart(id))}
         >
-          {"Add to Cart Cart"}
+          {"Add Item"}
         </button>
       )}
     </div>
