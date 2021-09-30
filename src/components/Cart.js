@@ -67,7 +67,7 @@ const Cart = () => {
 
   return (
     <div
-      className={`bg-gray-200 min-h-screen ${
+      className={`bg-gray-200 min-h-screen w-full ${
         cart.length < 1 ? "flex justify-center items-center" : ""
       }`}
     >
